@@ -1,6 +1,6 @@
 export default {
   contents: [
-    "./src/index.html",
+    "./index.html",
     "./src/contact.html",
     "./src/about.html",
     "./src/projects.html",
