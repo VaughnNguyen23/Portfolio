@@ -8,8 +8,7 @@
   <link href="assets/styles.css" rel="stylesheet">
 </head>
 
-<body
-  class="backdrop-blur-xl overflow-hidden bg-radial from-black/100 via-indigo-900 to-black/100 shadow-2xl  text-lime-200">
+<body class="backdrop-blur-xl overflow-hidden bg-radial from-black via-indigo-900 to-black shadow-2xl  text-lime-200">
   <!-- Nav Section -->
   <section class="md:px-14 sm:px-8">
     <nav class="flex items-center justify-between px-3 py-3">
@@ -22,22 +21,82 @@
       </button>
       <!-- Nav Links -->
       <div id="nav-links" class="hidden md:flex space-x-4">
-        <a href="assets/about.html" class="py-2 px-3 hover:bg-neutral-800">About</a>
-        <a href="assets/projects.html" class="py-2 px-3 hover:bg-neutral-800">Projects</a>
-        <a href="assets/contact.html" class="py-2 px-3 hover:bg-neutral-800">Contact</a>
+        <div class="flex md:flex-row sm:flex-col gap-4 items-center py-4 px-2">
+          <div class="flex flex-row gap-3 max-w-sm mx-auto relative z-10 opacity-70">
+            <button
+              class="group relative p-2 rounded-sm backdrop-blur-xl border-2 border-hidden bg-transparent shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+              </div>
+
+              <div
+                class="absolute inset-0 rounded-sm bg-gradient-to-r from-indigo-500/10 via-indigo-400/20 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+
+              <div class="relative z-10 flex items-center gap-4">
+                <div class="flex-1 text-left">
+                  <a href="about.html"
+                    class="group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm">About</a>
+                </div>
+              </div>
+            </button>
+            <button
+              class="group relative p-2 rounded-sm backdrop-blur-xl border-2 border-hidden bg-transparent shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+              </div>
+
+              <div
+                class="absolute inset-0 rounded-sm bg-gradient-to-r from-indigo-500/10 via-indigo-400/20 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+
+              <div class="relative z-10 flex items-center gap-4">
+                <div class="flex-1 text-left">
+                  <a href="projects.html"
+                    class="group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm">Projects</a>
+                </div>
+              </div>
+            </button>
+            <button
+              class="group relative p-2 rounded-sm backdrop-blur-xl border-2 border-hidden bg-transparent shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+              </div>
+
+              <div
+                class="absolute inset-0 rounded-sm bg-gradient-to-r from-indigo-500/10 via-indigo-400/20 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+
+              <div class="relative z-10 flex items-center gap-4">
+                <div class="flex-1 text-left">
+                  <a href="contact.html"
+                    class="group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm">Contact</a>
+                </div>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
       </div>
     </nav>
+    <!-- Lg Nav -->
+
     <!-- Dropdown Menu (mobile) -->
     <div id="dropdown" class="md:hidden hidden flex-col space-y-2 px-4 py-2 bg-white border-b">
-      <a href="assets/projects.html" class="py-2 px-3  hover:bg-neutral-800">Projects</a>
-      <a href="assets/about.html" class="py-2 px-3  hover:bg-neutral-800">About</a>
-      <a href="assets/contact.html" class="py-2 px-3  hover:bg-neutral-800">Contact</a>
+      <a href="projects.html" class="py-2 px-3  hover:bg-neutral-800">Projects</a>
+      <a href="about.html" class="py-2 px-3  hover:bg-neutral-800">About</a>
+      <a href="contact.html" class="py-2 px-3  hover:bg-neutral-800">Contact</a>
     </div>
     <script>
-      const menuBtn = document.getElementById('menu-btn');
-      const dropdown = document.getElementById('dropdown');
-      menuBtn.addEventListener('click', () => {
-        dropdown.classList.toggle('hidden');
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.getElementById('menu-btn');
+        const dropdown = document.getElementById('dropdown');
+        if (menuBtn && dropdown) {
+          menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+          });
+        }
       });
     </script>
   </section>
@@ -45,7 +104,7 @@
   <main class="flex flex-col min-h-screen w-full h-full justify-center items-center lg:scale-150">
     <div class="flex flex-col w-full lg:flex-row-reverse md:gap-x-25 max-w-2xl h-full">
       <div class="px-4 mb-1">
-        <model-viewer src="assets/cpu.glb" alt="3d Model CPU" auto-rotate shadow-intensity="4"
+        <model-viewer src="./assets/cpu.glb" alt="3d Model CPU" auto-rotate shadow-intensity="4"
           class="object-cover mx-auto w-40 h-40 lg:w-64 md:h-full"></model-viewer>
       </div>
       <div class="px-0 md:px-4 ">
@@ -59,8 +118,6 @@
         <div class="text-center">Seattle, WA</div>
         <div class="flex md:flex-row sm:flex-col gap-4 items-center py-4 px-2">
           <div class="flex flex-row gap-3 max-w-sm mx-auto relative z-10 opacity-70">
-            <!-- <button -->
-            <!--   class="group relative p-2 rounded-lg backdrop-blur-xl border-2 border-hidden bg-gradient-to-br from-indigo-900/40 via-black-900/60 to-black/80 shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden"> -->
             <button
               class="group relative p-2 rounded-lg backdrop-blur-xl border-2 border-hidden bg-transparent shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden">
               <div
@@ -73,15 +130,11 @@
 
               <div class="relative z-10 flex items-center gap-4">
                 <div class="flex-1 text-left">
-                  <!-- <p class="text-sm group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm"> -->
-                  <a href="assets/projects.html"
+                  <a href="projects.html"
                     class="group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm">Projects</a>
-                  <!-- </p> -->
                 </div>
               </div>
             </button>
-            <!-- </div> -->
-            <!-- <div class="flex flex-col gap-6 max-w-sm mx-auto relative z-10 opacity-70"> -->
             <button
               class="group relative p-2 rounded-lg backdrop-blur-xl border-2 border-hidden bg-transparent shadow-2xl hover:shadow-indigo-500/30 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-indigo-400/60 overflow-hidden">
               <div
@@ -94,10 +147,8 @@
 
               <div class="relative z-10 flex items-center gap-4">
                 <div class="flex-1 text-left">
-                  <!-- <p class="text-sm group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm"> -->
-                  <a href="assets/contact.html"
+                  <a href="contact.html"
                     class="group-hover:text-indigo-300 transition-colors duration-300 drop-shadow-sm">Contact</a>
-                  <!-- </p> -->
                 </div>
               </div>
             </button>
